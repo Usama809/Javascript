@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+         <script type="text/javascript">
+         		//////Challange 1: Longest word
+         		//Return a longet word of a string
+         		//if more than one longest word, put into an array
+         		//ex.longestword('Hello, my name is Usama') ==='hello'
+         		//ex.longestword('Hello there, my name is Usama') ===['hello','there']
+         		// function longestWord(sen)
+         		// {
+         		// 	// Create  Filtered array
+         			// const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
+         			// /// Sort by lenght
+         			// const stored = wordArr.sort(function(a, b)
+         			// {
+            //             return b.length - a.length;
+         			// });
+
+         			// ///if multiply word put into array
+         			// const longestwordArr = sorted.filter(function(word)
+         			// {
+            //                 return word.length === sorted[0].length;
+
+         			// });
+
+         			//      ///check if more than one array val
+         			//      if(longestwordArr.lenght ===1)
+         			//      {
+            //                  //Return the word
+            //                  return longestwordArr[0];
+         			//      }
+         			//      else
+         			//      {
+            //                  return longestwordArr;
+         			//      }
+
+         			//Same as the above
+                      //create filtered array
+         	// 		const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
+         	// 		/// Sort by lenght
+         	// 		const stored = wordArr.sort((a, b)=> b.length - a.length);
+
+         	// 		///if multiply word put into array
+         	// 		const longestwordArr = sorted.filter((word) => word.length === sorted[0].length);
+         	// 		     ///check if more than one array val
+         	// 		     if(longestwordArr.lenght ===1)
+         	// 		     {
+          //                    //Return the word
+          //                    return longestwordArr[0];
+         	// 		     }
+         	// 		     else
+         	// 		     {
+          //                    return longestwordArr;
+         	// 		     }
+
+
+        		// }
+
+        		////CHALLENGE2 : ARRAY CHUNKING 
+        		//Split an array into chunking arrays of a specific lenght
+        		//ex. chunkArray([1,2,3,4,5,6,7],3) === [[1,2,3],[4,5,6],[7]]
+        		//ex. chunkArray([1,2,3,4,5,6,7],2) === [[1,2],[3,4],[5,6],[7]]
+
+        		// function chunkArray(arr,len)
+        		// {
+        			// SOLUTION 1
+        			//Initialze  chunked arr
+        			// const chunkedArr = [];
+        			// //Set index
+        			// let i = 0;
+
+
+        			// //Loop while index is less than the array length
+
+        			// while(i <arr.length)
+        			// {
+        			// 	//Slice out from the index to the index + the chunk length and push on the chunked array
+
+        			// 	chunkedArr.push(arr.slice(i, i + len));
+        			// 	//incremented by chunk length
+        			// 	i += len; 
+
+        			// }
+
+        			// return chunkedArr;
+
+        			//SOLUTION 2
+
+        			//inialize  chunked arr
+        			// const chunkedArr=[];
+        			// //Loop Through arr
+        			// arr.forEach(function(val)
+        			// {
+        			// 	//Get last element
+
+        			// 	const last = chunkedArr[chunkedArr.length - 1];
+        			// 	//check if last and if last length is equal to the chunk len
+        			// 	if(!last || last.lenght === len)
+        			// 	{
+        			// 		chunkedArr.push([val]);
+
+        			// 	}
+        			// 	else
+        			// 	{
+        			// 		last.push(val);
+
+        			// 	}
+        			// 	// console.log(last);
+
+        			// });
+        			// return chunkedArr;
+  // }
+
+        			///CHALLENGE 3: FLATTEN ARRAY
+        			//Take an array of arrays and flatten to a single array
+        			//ex.[[1,2],[3,4],[5,6],[7]] = [1,2,3,4,5,6,7]
+
+
+        			// function flattenArray(arrays)
+        			// {
+        				//Solution 1
+        				// return arrays.reduce((a,b) => a.concat(b));
+
+        				//Solution 2
+
+        				// return [].concat.apply([], arrays);
+
+        				//Solution 3
+        				// function Add(a,b,c)
+        				// {
+        				// 	return a + b + c;
+        				// }
+        				// const arr = [1,2,3];
+        				// console.log(Add(...arr)); 
+
+        			// }
+
+        			//CHALLENGE 4 : ANAGRAM 
+        			///Return true if anagram and false if not 
+        			//ex.'elbow' === 'below'
+        			//ex.'Dormitory' === 'dirty room##'
+
+        			// function isAnagram(str1, str2)
+        			// {
+        			// 	return formatStr(str1) === formatStr(str2);
+        			// }
+        			// //Helper Function
+
+        			// function formatStr(str)
+        			// {
+        			// 	return str
+        			// 	   .replace(/[^\w]/g, '')
+        			// 	   .toLowerCase()
+        			// 	   .split('')
+        			// 	   .sort()
+        			// 	   .join('');
+        			// }
+
+        			///CHALLENGE 5 : LETTER CHANGES
+        			//Change every letter of the string  to the one that follees it and capitalize the vowels
+        			//Z should turn to A
+        			//ex.'hello there'==='Ifmmp UIfsf'
+
+        			function letterChanges(str)
+        			{
+        				let newStr = str.toLowerCase().replace(/[a-z]/gi, char =>
+        				{
+        					if (char === 'z' || char === 'Z')
+        					{
+        						return a;
+
+        					}
+        					else
+        					{
+        						return String.fromCharCode(char.charCodeAt() + 1);
+
+        					}
+  
+        				});
+
+        				newStr = newStr.replace(/a|e|i|o|u/gi, vowel => vowel.toUpperCase());
+        				return newStr;
+
+        			}
+
+
+
+        		
+
+         		// Call by function
+         	   // const output = longestWord('Hello there,my name is Brad');
+             //   console.log(output);
+
+             // const output = chunkArray([1,2,3,4,5,6,7],2);
+             //   console.log(output);
+
+               //  const output = flattenArray([[1,2],[3,4],[5,6],[7]]);
+               // console.log(output);
+
+                 ////////
+               //   const output = isAnagram('elbow','below');
+               // console.log(output);
+
+               ///////
+                const output = letterChanges('Hello There');
+               console.log(output);
+         </script>
+</body>
+</html>
